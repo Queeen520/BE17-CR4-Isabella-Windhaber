@@ -3,11 +3,15 @@ require_once 'db_connect.php';
 require_once 'file_upload.php';
 
 if ($_POST) {    
-    $name = $_POST['name'];
-    $visited = $_POST['visited'];
-    $country = $_POST['country'];
-    $story = $_POST['story'];
-    $id = $_POST['id'];
+    $titel = $_POST['titel'];
+    $type = $_POST['type'];
+    $release_year = $_POST['release_year'];
+    $description = $_POST['description'];
+    $ISBN = $_POST['ISBN'];
+    $author = $_POST['author'];
+    $pages = $_POST['pages'];
+    $producer = $_POST['producer'];
+    $availability = $_POST['availability'];
     //variable for upload pictures errors is initialised
     $uploadError = '';
 
