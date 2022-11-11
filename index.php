@@ -1,33 +1,73 @@
 <?php 
 require_once 'actions/db_connect.php';
 
-$sql = "SELECT * FROM media";
-$result = mysqli_query($connect ,$sql);
+$sqlB = "SELECT * FROM media WHERE type = 'Book'";
+$sqlD = "SELECT * FROM media WHERE type = 'DVD'";
+$sqlC = "SELECT * FROM media WHERE type = 'CD'";
 
-$tbody=''; //this variable will hold the body for the table
+$resultB = mysqli_query($connect ,$sqlB);
+$resultD = mysqli_query($connect ,$sqlD);
+$resultC = mysqli_query($connect ,$sqlC);
 
-if (mysqli_num_rows($result)  > 0) {
-    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-        $tbody .= "<tr>
+$tbodyB=''; //this variable will hold the body for the table
+$tbodyD=''; //this variable will hold the body for the table
+$tbodyC=''; //this variable will hold the body for the table
+
+$tbody='';
+
+if (mysqli_num_rows($resultB)  > 0) {
+    while ($row = mysqli_fetch_array($resultB, MYSQLI_ASSOC)) {
+        $tbodyB .= "<tr>
             <td><img class='img-thumbnail' src='pictures/" .$row['picture']."'></td>
             <td>" .$row['titel']."</td>
             <td>" .$row['type']."</td>
             <td>" .$row['release_year']."</td>
-            <td>" .$row['description']."</td>
             <td>" .$row['ISBN']."</td>
             <td>" .$row['author']."</td>
             <td>" .$row['pages']."</td>
-            <td>" .$row['producer']."</td>
-            <td>" .$row['FSK']."</td>
-            <td>" .$row['genre']."</td>
             <td>" .$row['status']."</td>
 
             <td><a href='update.php?id=" .$row['id']."'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
             <a href='delete.php?id=" .$row['id']."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
             </tr>";
     };
-} else {
-    $tbody =  "<tr><td colspan='6'><center>No Data Available </center></td></tr>";
+}
+if (mysqli_num_rows($resultD)  > 0) {
+    while ($row = mysqli_fetch_array($resultD, MYSQLI_ASSOC)) {
+        $tbodyD .= "<tr>
+        <td><img class='img-thumbnail' src='pictures/" .$row['picture']."'></td>
+        <td>" .$row['titel']."</td>
+        <td>" .$row['type']."</td>
+        <td>" .$row['release_year']."</td>
+        <td>" .$row['producer']."</td>
+        <td>" .$row['FSK']."</td>
+        <td>" .$row['genre']."</td>
+        <td>" .$row['status']."</td>
+
+        <td><a href='update.php?id=" .$row['id']."'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
+        <a href='delete.php?id=" .$row['id']."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
+        </tr>";
+    };
+}
+if (mysqli_num_rows($resultC)  > 0) {
+    while ($row = mysqli_fetch_array($resultC, MYSQLI_ASSOC)) {
+        $tbodyC .= "<tr>
+        <td><img class='img-thumbnail' src='pictures/" .$row['picture']."'></td>
+        <td>" .$row['titel']."</td>
+        <td>" .$row['type']."</td>
+        <td>" .$row['release_year']."</td>
+        <td>" .$row['producer']."</td>
+        <td>" .$row['FSK']."</td>
+        <td>" .$row['genre']."</td>
+        <td>" .$row['status']."</td>
+
+        <td><a href='update.php?id=" .$row['id']."'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
+        <a href='delete.php?id=" .$row['id']."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
+        </tr>";
+    };
+}
+else {
+    $tbody =  "<tr><td colspan='9'><center>No Data Available </center></td></tr>";
 }
 
 mysqli_close($connect);
@@ -74,10 +114,25 @@ mysqli_close($connect);
                         <th>Titel</th>
                         <th>Type</th>
                         <th>Release Year</th>
-                        <th>Short Description</th>
                         <th>ISBN</th>
                         <th>Author</th>
                         <th>Pages</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?= $tbodyB;?> 
+                    <?= $tbody;?> 
+                </tbody>
+            </table>
+            <table class='table table-striped'>
+                <thead class='table-info'>
+                    <tr>
+                        <th>Picture</th>
+                        <th>Titel</th>
+                        <th>Type</th>
+                        <th>Release Year</th>
                         <th>Producer</th>
                         <th>FSK</th>
                         <th>Genre</th>
@@ -86,6 +141,26 @@ mysqli_close($connect);
                     </tr>
                 </thead>
                 <tbody>
+                    <?= $tbodyD;?> 
+                    <?= $tbody;?> 
+                </tbody>
+            </table>
+            <table class='table table-striped'>
+                <thead class='table-warning'>
+                    <tr>
+                        <th>Picture</th>
+                        <th>Titel</th>
+                        <th>Type</th>
+                        <th>Release Year</th>
+                        <th>Producer</th>
+                        <th>FSK</th>
+                        <th>Genre</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?= $tbodyC;?> 
                     <?= $tbody;?> 
                 </tbody>
             </table>
