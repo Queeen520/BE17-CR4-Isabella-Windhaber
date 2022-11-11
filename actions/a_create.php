@@ -11,13 +11,14 @@ if ($_POST) {
     $author = $_POST['author'];
     $pages = $_POST['pages'];
     $producer = $_POST['producer'];
-    $availability = $_POST['availability'];
+    $FSK = $_POST['FSK'];
+    $genre = $_POST['genre'];
+    $status = $_POST['status'];
     $uploadError = '';
     //this function exists in the file upload.
     $picture = file_upload($_FILES['picture']);  
    
-    $sql = "INSERT INTO media (title, type, release_year, description, ISBN, author, pages, producer, availability, picture) 
-    VALUES ('$titel', '$type', '$release_year', '$description', '$ISBN', '$author', '$pages', '$producer', '$availability', '$picture->fileName')";
+    $sql = "INSERT INTO media (titel, type, release_year, description, ISBN, author, pages, producer, FSK, genre, status, picture) VALUES ('$titel', '$type', '$release_year', '$description', '$ISBN', '$author', '$pages', '$producer', '$FSK', '$genre', '$status', '$picture->fileName')";
 
     if (mysqli_query($connect, $sql) == true) {
         $class = "success";

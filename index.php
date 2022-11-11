@@ -6,8 +6,8 @@ $result = mysqli_query($connect ,$sql);
 
 $tbody=''; //this variable will hold the body for the table
 
-if(mysqli_num_rows($result) > 0) {     
-    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){         
+if (mysqli_num_rows($result)  > 0) {
+    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         $tbody .= "<tr>
             <td><img class='img-thumbnail' src='pictures/" .$row['picture']."'></td>
             <td>" .$row['titel']."</td>
@@ -18,7 +18,9 @@ if(mysqli_num_rows($result) > 0) {
             <td>" .$row['author']."</td>
             <td>" .$row['pages']."</td>
             <td>" .$row['producer']."</td>
-            <td>" .$row['availability']."</td>
+            <td>" .$row['FSK']."</td>
+            <td>" .$row['genre']."</td>
+            <td>" .$row['status']."</td>
 
             <td><a href='update.php?id=" .$row['id']."'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
             <a href='delete.php?id=" .$row['id']."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
@@ -77,7 +79,9 @@ mysqli_close($connect);
                         <th>Author</th>
                         <th>Pages</th>
                         <th>Producer</th>
-                        <th>Availability</th>
+                        <th>FSK</th>
+                        <th>Genre</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>

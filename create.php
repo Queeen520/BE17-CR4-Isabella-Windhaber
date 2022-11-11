@@ -44,15 +44,21 @@
                     <th>Producer</th>
                         <td><input class='form-control' type="text" name="producer" placeholder="Producer Name" step="any" /></td>
                     </tr>
-                    <th>Availability</th>
-                        <td><input class='form-control' type="text" name="availability" placeholder="Available/Not Available" step="any" /></td>
+                    <th>FSK</th>
+                        <td><input class='form-control' type="text" name="FSK" placeholder="FSK" step="any" /></td>
+                    </tr>
+                    <th>Genre</th>
+                        <td><input class='form-control' type="text" name="genre" placeholder="Genre" step="any" /></td>
                     </tr>
                     <tr>
+                    <th>Status</th>
+                        <td><input class='form-control' type="text" name="status" placeholder="Available / Not Available" step="any" /></td>
+                    </tr>
                         <th>Picture</th>
                         <td><input class='form-control' type="file" name="picture" /></td>
                     </tr>
                     <tr>
-                        <td><button class='btn btn-success' type="submit">Upload Picture</button></td>
+                        <td><button class='btn btn-success' type="submit">Upload</button></td>
                         <td><a href="index.php"><button class='btn btn-warning' type="button">Back Home</button></a></td>
                     </tr>
                 </table>
