@@ -45,7 +45,7 @@ if ($_GET['id']) {
     </head>
     <body>
         <fieldset>
-            <legend class='h2'>Update request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $picture ?>' alt="<?php echo $titel ?>"></legend>
+            <legend class='h2'>Update request <img class='img-thumbnail' src='pictures/<?php echo $picture ?>' alt="<?php echo $titel ?>"></legend>
             <form action="actions/a_update.php"  method="post" enctype="multipart/form-data">
                 <table class="table">
                 <tr>

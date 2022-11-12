@@ -21,10 +21,8 @@ if (mysqli_num_rows($resultB)  > 0) {
             <td><img class='img-thumbnail' src='pictures/" .$row['picture']."'></td>
             <td>" .$row['titel']."</td>
             <td>" .$row['type']."</td>
-            <td>" .$row['release_year']."</td>
             <td>" .$row['ISBN']."</td>
             <td>" .$row['author']."</td>
-            <td>" .$row['pages']."</td>
             <td>" .$row['status']."</td>
 
             <td><a href='update.php?id=" .$row['id']."'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
@@ -39,13 +37,12 @@ if (mysqli_num_rows($resultD)  > 0) {
         <td><img class='img-thumbnail' src='pictures/" .$row['picture']."'></td>
         <td>" .$row['titel']."</td>
         <td>" .$row['type']."</td>
-        <td>" .$row['release_year']."</td>
-        <td>" .$row['producer']."</td>
         <td>" .$row['FSK']."</td>
         <td>" .$row['genre']."</td>
         <td>" .$row['status']."</td>
 
         <td><a href='update.php?id=" .$row['id']."'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
+        <td><a href='details.php?id=" . $row['id'] . "'><button class='btn btn-primary btn-sm' type='button'>More</button></a>
         <a href='delete.php?id=" .$row['id']."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
         </tr>";
     };
@@ -56,13 +53,12 @@ if (mysqli_num_rows($resultC)  > 0) {
         <td><img class='img-thumbnail' src='pictures/" .$row['picture']."'></td>
         <td>" .$row['titel']."</td>
         <td>" .$row['type']."</td>
-        <td>" .$row['release_year']."</td>
-        <td>" .$row['producer']."</td>
         <td>" .$row['FSK']."</td>
         <td>" .$row['genre']."</td>
         <td>" .$row['status']."</td>
 
         <td><a href='update.php?id=" .$row['id']."'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
+        <td><a href='details.php?id=" . $row['id'] . "'><button class='btn btn-primary btn-sm' type='button'>More</button></a>
         <a href='delete.php?id=" .$row['id']."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
         </tr>";
     };
@@ -114,12 +110,10 @@ mysqli_close($connect);
                         <th>Picture</th>
                         <th>Titel</th>
                         <th>Type</th>
-                        <th>Release Year</th>
                         <th>ISBN</th>
                         <th>Author</th>
-                        <th>Pages</th>
                         <th>Status</th>
-                        <th>Action</th>
+                        <th colspan='3'>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -133,12 +127,10 @@ mysqli_close($connect);
                         <th>Picture</th>
                         <th>Titel</th>
                         <th>Type</th>
-                        <th>Release Year</th>
-                        <th>Producer</th>
                         <th>FSK</th>
                         <th>Genre</th>
                         <th>Status</th>
-                        <th>Action</th>
+                        <th colspan='3'>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -152,12 +144,10 @@ mysqli_close($connect);
                         <th>Picture</th>
                         <th>Titel</th>
                         <th>Type</th>
-                        <th>Release Year</th>
-                        <th>Producer</th>
                         <th>FSK</th>
                         <th>Genre</th>
                         <th>Status</th>
-                        <th>Action</th>
+                        <th colspan='3'>Action</th>
                     </tr>
                 </thead>
                 <tbody>

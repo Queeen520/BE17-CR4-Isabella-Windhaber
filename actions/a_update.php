@@ -2,7 +2,8 @@
 require_once 'db_connect.php';
 require_once 'file_upload.php';
 
-if ($_POST) {    
+if ($_POST) {  
+    $id = $_POST['id'];  
     $titel = $_POST['titel'];
     $type = $_POST['type'];
     $release_year = $_POST['release_year'];
@@ -18,13 +19,13 @@ if ($_POST) {
     $picture = file_upload($_FILES['picture']);//file_upload() called  
     if($picture->error===0){
         ($_POST["picture"]=="product.png")?: unlink("../pictures/$_POST[picture]");           
-        $sql = "UPDATE secret_place SET name = '$name', country = '$country', visited = '$visited', story = '$story', picture = '$picture->fileName' WHERE id = {$id}";
+        $sql = "UPDATE media SET titel = '$titel', type = '$type', release_year = '$release_year', description = '$description', ISBN = '$ISBN', author = '$author', pages = '$pages', picture = '$picture->fileName' WHERE id = {$id}";
     }else{
-        $sql = "UPDATE secret_place SET name = '$name', country = '$country', visited = '$visited', story = '$story' WHERE id = {$id}";
+        $sql = "UPDATE media SET titel = '$titel', type = '$type', release_year = '$release_year', description = '$description', ISBN = '$ISBN', author = '$author', pages = '$pages' WHERE id = {$id}";
     }    
     if (mysqli_query($connect, $sql) === TRUE) {
         $class = "success";
-        $message = "The Secret Place was successfully updated";
+        $message = "The Media was successfully updated";
         $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
     } else {
         $class = "danger";
