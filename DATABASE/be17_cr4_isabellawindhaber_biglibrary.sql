@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 12. Nov 2022 um 16:25
+-- Erstellungszeit: 12. Nov 2022 um 16:39
 -- Server-Version: 10.4.25-MariaDB
 -- PHP-Version: 8.1.10
 
@@ -54,7 +54,7 @@ INSERT INTO `media` (`id`, `picture`, `titel`, `type`, `release_year`, `descript
 (2, '636fa860c4594.png', 'inFAMOUS Second Son', 'CD', 2014, '', 0, '', 0, 'Sucker Punch Productions', 16, 'Action', 'Available'),
 (3, '636facf58cfc8.png', 'Wrong Turn 5 Bloodlines', 'DVD', 2012, '', 0, '', 0, 'Declan OBrien', 18, 'Horror', 'Available'),
 (4, '636faa5850833.png', 'RAYMAN Legends', 'CD', 2014, 'Rayman Legend is a popular jump and run video game', 0, '', 0, 'Ubisoft', 6, 'Jump and Run, Adventure', 'Available'),
-(5, '636fac7ca9ceb.png', 'Between Past and Future', 'Book', 1961, '', 9783492301749, 'Hannah Arendt', 439, '', 0, '', 'Available'),
+(5, '636fbdfbe87b0.png', 'Between Past and Future', 'Book', 1961, 'The book is a collection of various essays written between 1954 and 1968. The final version of the book includes essays dealing with different philosophical subjects including freedom, education, authority, tradition, history and politics. The subtitle of', 9783492301749, 'Hannah Arendt', 439, '', 0, '', 'Available'),
 (6, '636faac4b506f.png', 'Days Gone', 'CD', 2016, '', 0, '', 0, 'SIE Bend Studio', 18, 'Action, Adventure', 'Available'),
 (7, '636fabcac2bef.png', 'Schindlers Liste', 'DVD', 1994, '', 0, '', 0, 'Steven Spielberg', 12, 'Drama, Historical-Drama, War', 'Not Available'),
 (8, '636fa33910f72.png', 'Rich Dad Poor Dad', 'Book', 1997, 'Rich Dad Poor Dad is about Robert Kiyosaki and his two dads—his real father (poor dad) and the father of his best friend (rich dad)—and the ways in which both men shaped his thoughts about money and investing. He says that his poor dad went to Stanford an', 9783898798822, 'Robert T. Kiyosaki', 302, '', 0, '', 'Not Available'),
