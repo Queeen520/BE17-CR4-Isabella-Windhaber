@@ -1,4 +1,9 @@
 <?php
+
+/* Here we have everything in one update page -
+
+better solution would be: 3 different update pages for Books / DVD / CD  */
+
 require_once 'actions/db_connect.php';
 
 if ($_GET['id']) {
@@ -8,13 +13,14 @@ if ($_GET['id']) {
     if (mysqli_num_rows($result) == 1) {
         $data = mysqli_fetch_assoc($result);
         $titel = $_POST['titel'];
-        $type = $_POST['type'];
         $release_year = $_POST['release_year'];
         $description = $_POST['description'];
         $ISBN = $_POST['ISBN'];
         $author = $_POST['author'];
         $pages = $_POST['pages'];
         $producer = $_POST['producer'];
+        $FSK = $_POST['FSK'];
+        $genre = $_POST['genre'];
         $status = $_POST['status'];
         $picture = $data['picture'];
     } else {
