@@ -15,7 +15,7 @@ if ($_GET['id']) {
         $author = $_POST['author'];
         $pages = $_POST['pages'];
         $producer = $_POST['producer'];
-        $availability = $_POST['availability'];
+        $status = $_POST['status'];
         $picture = $data['picture'];
     } else {
         header("location: error.php");
@@ -75,7 +75,7 @@ if ($_GET['id']) {
                         <td><input class='form-control' type="text" name="producer" placeholder="Producer Name" step="any" /></td>
                     </tr>
                     <th>Availability</th>
-                        <td><input class='form-control' type="text" name="availability" placeholder="Available/Not Available" step="any" /></td>
+                        <td><input class='form-control' type="text" name="status" placeholder="Available/Not Available" step="any" /></td>
                     </tr>
                        <th>Picture</th>
                         <td><input class="form-control" type="file" name= "picture" /></td>

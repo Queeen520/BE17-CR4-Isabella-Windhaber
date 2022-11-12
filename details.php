@@ -37,7 +37,7 @@ if ($_GET['id']) {
 <body class="bg-light">
     <header>
         <div class="m-auto">
-            <p class="h1 text-white text-center title">Big Library</p>
+            <p class="h1 text-black text-center title">Book Details</p>
         </div>
     </header>
     <main class="container p-5">

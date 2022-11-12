@@ -15,6 +15,9 @@ $tbodyC=''; //this variable will hold the body for the table
 
 $tbody='';
 
+/* Button MORE only exists at Table Books because the Details Page is created for Books 
+    NEXT:  creating Detail Pages for DVD + CD */
+    
 if (mysqli_num_rows($resultB)  > 0) {
     while ($row = mysqli_fetch_array($resultB, MYSQLI_ASSOC)) {
         $tbodyB .= "<tr>
@@ -42,7 +45,6 @@ if (mysqli_num_rows($resultD)  > 0) {
         <td>" .$row['status']."</td>
 
         <td><a href='update.php?id=" .$row['id']."'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
-        <td><a href='details.php?id=" . $row['id'] . "'><button class='btn btn-primary btn-sm' type='button'>More</button></a>
         <a href='delete.php?id=" .$row['id']."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
         </tr>";
     };
@@ -58,7 +60,6 @@ if (mysqli_num_rows($resultC)  > 0) {
         <td>" .$row['status']."</td>
 
         <td><a href='update.php?id=" .$row['id']."'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
-        <td><a href='details.php?id=" . $row['id'] . "'><button class='btn btn-primary btn-sm' type='button'>More</button></a>
         <a href='delete.php?id=" .$row['id']."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
         </tr>";
     };
@@ -98,7 +99,7 @@ mysqli_close($connect);
         <div class="manageProduct w-75 mt-3">    
             <div class='mb-3'>
                 <a href= "create.php"><button class='btn btn-primary'type="button" >Add New Media</button></a>
-                <!--    Button for DVD & CD ?? 
+                <!--    Button for DVD & CD 
                 <a href= "create.php"><button class='btn btn-primary'type="button" >Add</button></a>
                 <a href= "create.php"><button class='btn btn-primary'type="button" >Add</button></a>
                 -->
@@ -130,7 +131,7 @@ mysqli_close($connect);
                         <th>FSK</th>
                         <th>Genre</th>
                         <th>Status</th>
-                        <th colspan='3'>Action</th>
+                        <th colspan='2'>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -147,7 +148,7 @@ mysqli_close($connect);
                         <th>FSK</th>
                         <th>Genre</th>
                         <th>Status</th>
-                        <th colspan='3'>Action</th>
+                        <th colspan='2'>Action</th>
                     </tr>
                 </thead>
                 <tbody>
