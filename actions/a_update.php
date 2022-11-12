@@ -5,23 +5,24 @@ require_once 'file_upload.php';
 if ($_POST) {  
     $id = $_POST['id'];  
     $titel = $_POST['titel'];
-    $type = $_POST['type'];
     $release_year = $_POST['release_year'];
     $description = $_POST['description'];
     $ISBN = $_POST['ISBN'];
     $author = $_POST['author'];
     $pages = $_POST['pages'];
     $producer = $_POST['producer'];
-    $availability = $_POST['availability'];
+    $FSK = $_POST['FSK'];
+    $genre = $_POST['genre'];
+    $status = $_POST['status'];
     //variable for upload pictures errors is initialised
     $uploadError = '';
 
     $picture = file_upload($_FILES['picture']);//file_upload() called  
     if($picture->error===0){
         ($_POST["picture"]=="product.png")?: unlink("../pictures/$_POST[picture]");           
-        $sql = "UPDATE media SET titel = '$titel', type = '$type', release_year = '$release_year', description = '$description', ISBN = '$ISBN', author = '$author', pages = '$pages', picture = '$picture->fileName' WHERE id = {$id}";
+        $sql = "UPDATE media SET titel = '$titel', release_year = '$release_year', description = '$description', ISBN = '$ISBN', author = '$author', pages = '$pages', FSK = '$FSK', genre = '$genre', status = '$status', picture = '$picture->fileName' WHERE id = {$id}";
     }else{
-        $sql = "UPDATE media SET titel = '$titel', type = '$type', release_year = '$release_year', description = '$description', ISBN = '$ISBN', author = '$author', pages = '$pages' WHERE id = {$id}";
+        $sql = "UPDATE media SET titel = '$titel', release_year = '$release_year', description = '$description', ISBN = '$ISBN', author = '$author', pages = '$pages' FSK = '$FSK', genre = '$genre', status = '$status' WHERE id = {$id}";
     }    
     if (mysqli_query($connect, $sql) === TRUE) {
         $class = "success";

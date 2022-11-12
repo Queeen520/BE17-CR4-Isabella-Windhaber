@@ -52,10 +52,6 @@ if ($_GET['id']) {
                         <th>Titel</th>
                         <td><input class='form-control' type="text" name="titel" placeholder="Media Titel" /></td>
                     </tr>    
-                    <tr>
-                        <th>Type</th>
-                        <td><input class='form-control' type="text" name="type" placeholder="Book/DVD/CD" step="any" /></td>
-                    </tr>
                     <th>Release Year</th>
                         <td><input class='form-control' type="text" name="release_year" placeholder="YYYY" step="any" /></td>
                     </tr>
@@ -73,6 +69,12 @@ if ($_GET['id']) {
                     </tr>
                     <th>Producer</th>
                         <td><input class='form-control' type="text" name="producer" placeholder="Producer Name" step="any" /></td>
+                    </tr>
+                    <th>FSK</th>
+                        <td><input class='form-control' type="text" name="FSK" placeholder="FSK" step="any" /></td>
+                    </tr>
+                    <th>Genre</th>
+                        <td><input class='form-control' type="text" name="Genre" placeholder="Genre" step="any" /></td>
                     </tr>
                     <th>Availability</th>
                         <td><input class='form-control' type="text" name="status" placeholder="Available/Not Available" step="any" /></td>
